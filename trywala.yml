@@ -1,0 +1,16 @@
+- name: testing trsdy blockss
+  become: yes
+  hosts: 127.0.0.1
+  connection: local
+  tasks:
+   - block:
+      - name: install nginx
+        yum: name=ngin state=present
+      - debug: msg="in block"
+     rescue:
+       - name: install nginx
+         shell: yum install nginx
+       - debug: msg="in rescue"
+
+     always:
+       - debug: msg="in always"

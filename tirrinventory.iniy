@@ -1,0 +1,11 @@
+[webtire]
+172.31.15.251 ansible_user=ec2-user ansible_ssh_private_key_file=/home/ec2-user/mysecond.pem ansible_ssh_common_args='-o StrictHostKey>
+
+[apptire]
+172.31.34.75 ansible_user=ec2-user ansible_ssh_private_key_file=/home/ec2-user/mysecond.pem ansible_ssh_common_args='-o StrictHostKeyC>
+
+[dbtire]
+172.31.45.190 ansible_user=ec2-user ansible_ssh_private_key_file=/home/ec2-user/mysecond.pem ansible_ssh_common_args='-o StrictHostKey>
+
+[all:vars]
+ansible_user=ec2-user ansible_ssh_private_key_file=/home/ec2-user/mysecond.pem ansible_ssh_common_args='-o StrictHostKeyChecking=no'
